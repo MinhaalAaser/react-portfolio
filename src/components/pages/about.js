@@ -1,36 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import profilePicture from "../../../static/assets/images/bio/IMG_20220204_123047764.jpg"
 
-export default class extends Component {
-  constructor() {
-    super()
+export default function() {
+  return (
+    <div className='content-page-wrapper'>
+      <div
+      className='left-column'
+      style={{
+        background:"url(" + profilePicture + ") no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}
+      />
 
-    this.state = {
-      aboutPage: true,
-      displayedText: ""
-    }
-
-    this.changeDisplay = this.changeDisplay.bind(this)
-  }
-  
-  changeDisplay() {
-    (this.state.aboutPage) ?
-    this.setState({ 
-      aboutPage: false,
-      displayedText: "Oops"
-    }):
-    this.setState({
-      aboutPage:true,
-      displayedText: "About"
-    })
-  }
-
-  render() {
-    return (
-        <div>
-          <button onClick={this.changeDisplay}>changeDisplay</button>
-          <h2>{this.state.displayedText}</h2>
-        </div>
-      );
-    
-  }
+      <div className='right-column'>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+      Ipsa architecto dignissimos illo ut quo sed odit in. 
+      Id repellat voluptatem maxime adipisci quasi, blanditiis beatae earum officiis quisquam eum nesciunt a tempora consequatur vel sunt nihil. 
+      Sapiente sit voluptatum est, sed ab illo fuga repellendus accusantium eaque minus ut eum?
+      </div>
+    </div>
+  );
 }
